@@ -1,0 +1,907 @@
+
+wassup
+4:38 AM
+Hey! Not much, just here and ready to help. What's on your mind?
+I am making a password generator app il send u the code modify it and send
+4:38 AM
+Sure, send it over!
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Password Generator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Password Generator 🔐</h1>
+    <input type="text" id="password" placeholder="Your password" readonly>
+    <div class="options">
+      <label>
+        Length:
+        <input type="number" id="length" value="8" min="4" max="20">
+      </label>
+      <label><input type="checkbox" id="uppercase" checked> Uppercase</label>
+      <label><input type="checkbox" id="lowercase" checked> Lowercase</label>
+      <label><input type="checkbox" id="numbers" checked> Numbers</label>
+      <label><input type="checkbox" id="symbols"> Symbols</label>
+    </div>
+    <button onclick="generatePassword()">Generate</button>
+    <button onclick="copyPassword()">Copy</button>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html> this is html wait let me send all the codes then modify it and send me
+Show more
+4:39 AM
+Sure, take your time! Send all the files (HTML, CSS, JS) and I'll modify them together. 👍
+body {
+  font-family: Arial;
+  background: 
+#0f172a;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.container {
+  background: 
+#1e293b;
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+  text-align: center;
+}
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: none;
+}
+button {
+  margin: 5px;
+  padding: 10px;
+  border: none;
+  background: 
+#38bdf8;
+  cursor: pointer;
+  border-radius: 5px;
+}
+button:hover {
+  background: 
+#0ea5e9;
+} this is css
+Show more
+4:39 AM
+Got it! Now send the JS and I'll put it all together and modify everything at once. 🚀
+function generatePassword() {
+  const length = document.getElementById("length").value;
+  const hasUpper = document.getElementById("uppercase").checked;
+  const hasLower = document.getElementById("lowercase").checked;
+  const hasNumber = document.getElementById("numbers").checked;
+  const hasSymbol = document.getElementById("symbols").checked;
+  const upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  const lower = "abcdefghijklmnopqrstuvwxyz";
+  const numbers = "0123456789";
+  const symbols = "!@#$%^&*()_+";
+  let allChars = "";
+  if (hasUpper) allChars += upper;
+  if (hasLower) allChars += lower;
+  if (hasNumber) allChars += numbers;
+  if (hasSymbol) allChars += symbols;
+  if (allChars === "") {
+    alert("Select at least one option!");
+    return;
+  }
+  let password = "";
+  for (let i = 0; i < length; i++) {
+    password += allChars.charAt(Math.floor(Math.random() * allChars.length));
+  }
+  document.getElementById("password").value = password;
+}
+function copyPassword() {
+  const passwordField = document.getElementById("password");
+  passwordField.select();
+  document.execCommand("copy");
+  alert("Password copied!");
+} this is js now I want this codes to be modified with new and amazing features
+Show more
+4:40 AM
+Got all 3 files! Let me check the frontend design skill first, then build you something awesome.
+
+Reading frontend design skill
+Reading frontend design skill
+Now let me build your upgraded password generator!
+
+Here's your upgraded password generator! Here's what's new compared to your original:
+New features added:
+Strength meter — live bar + entropy score in bits so you actually know how secure it is
+Show/hide toggle — mask or reveal the password with the eye button
+Crypto-secure randomness — uses crypto.getRandomValues() instead of Math.random()
+No ambiguous chars — optional filter that removes 0, O, l, 1, I (easy to confuse)
+Pronounceable mode — generates readable passwords like "koRatuBe4"
+Password history — last 6 passwords saved, tap any to copy
+Length up to 64 — slider goes way beyond your original max of 20
+Better copy — no more alert(), uses a sleek toast notification
+I need codes of three ones so that I can replace with my codes give me the codes with upgrades features
+4:42 AM
+Here are all three files:
+index.html
+
+HTML file for password generator
+HTML file for password generator
+style.css
+
+CSS file for password generator
+CSS file for password generator
+script.js
+
+Created a file, read a file
+Created a file, read a file
+All 3 files are ready! Just replace your existing files with these. Make sure all three (index.html, style.css, script.js) are in the same folder and it'll work perfectly. 🚀
+
+Index
+Code · HTML 
+
+Style
+Code · CSS 
+
+Script
+JS 
+wow I liked is there any way where you can take this to next level more codes modifed and more features adde
+4:47 AM
+Let me check the skill first and then go all out!
+Let me build the ultimate version — way more features, tabs, animations, the works!
+
+Here's what's brand new in this ultimate version compared to the last one:
+4 full tabs:
+Generate — the upgraded core with all options
+PIN / OTP — dedicated PIN generator (4/6/8/10 digits, numeric/alpha/mixed types) with animated digit reveal
+Passphrase — generates memorable word-based passwords like brave-ocean-flame-7 with L33tspeak, capitalizing, and suffix options
+Analysis — paste ANY password and get full breakdown: entropy bits, pool size, estimated crack time at 10 billion guesses/sec, and 8 security checks
+New generate features:
+Extended characters (¥€£©®™°αβγπ)
+"Start with letter" option
+6-tier strength scale (very weak → fortress 🏰)
+History shows strength badge + timestamp
+Regen button on the password box
+Want me to now export all 3 updated files so you can drop them into your project?
+and I want background also some modification like it should be attractfull
+4:50 AM
+Now let me go absolutely all out — animated background, glowing effects, particles, the full deal! 🔥
+
+Now let me export all 3 files with this stunning design! 🔥
+
+Created 4 files, ran a command, read a file
+Created 4 files, ran a command, read a file
+All 3 files are ready! Here's what's in this ultimate version:
+Background & visuals:
+Animated particle network with moving glowing dots and connecting lines
+Three radial glows — purple top-left, cyan bottom-right, pink center
+Glassmorphism cards with a glowing top-edge accent line
+Gradient logo shield with a breathing pulse animation
+Gradient text title (white → purple → cyan)
+Shimmer effect on the strength bar fill
+Design upgrades:
+Smooth fadeDown / fadeUp entry animations on load
+Slider thumb with purple-to-cyan gradient and glow
+Active generate button floats up on hover with deep shadow
+Password box turns green and glows when copied
+PIN digits flash purple one-by-one when generated
+Passphrase words are interactive hoverable pills
+Just drop all three files into the same folder and open index.html in your browser — no server needed! 🚀
+
+Index
+Code · HTML 
+
+Style
+Code · CSS 
+
+Script
+JS 
+
+You are out of free messages until 9:30 AM
+Upgrade
+
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Outfit:wght@400;600;800;900&display=swap');
+ 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+ 
+:root {
+  --p: #a855f7;
+  --p2: #7c3aed;
+  --p3: #4c1d95;
+  --c: #22d3ee;
+  --g: #4ade80;
+  --r: #f87171;
+  --am: #fbbf24;
+  --pk: #f472b6;
+  --bg: #05050f;
+  --s1: #0a0a1a;
+  --s2: #0f0f22;
+  --s3: #161630;
+  --bd: #1e1e3a;
+  --bd2: #2a2a4a;
+  --txt: #f0f0ff;
+  --mut: #6060a0;
+  --fnt: #2a2a50;
+  --mono: 'JetBrains Mono', monospace;
+  --sans: 'Outfit', sans-serif;
+}
+ 
+body {
+  background: var(--bg);
+  color: var(--txt);
+  font-family: var(--sans);
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+ 
+/* ─── Animated Background Canvas ─── */
+canvas#bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+ 
+/* ─── Layout ─── */
+.wrap {
+  position: relative;
+  z-index: 1;
+  max-width: 440px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 3rem;
+}
+ 
+/* ─── Hero Header ─── */
+.hero {
+  text-align: center;
+  padding: 2rem 0 1.5rem;
+  animation: fadeDown 0.7s ease both;
+}
+ 
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+ 
+.shield {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 1rem;
+  background: linear-gradient(135deg, var(--p), var(--c));
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  box-shadow: 0 0 32px rgba(168,85,247,0.5), 0 0 64px rgba(34,211,238,0.2);
+  animation: pulse 3s ease-in-out infinite;
+}
+ 
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 32px rgba(168,85,247,0.5), 0 0 64px rgba(34,211,238,0.2); }
+  50%       { box-shadow: 0 0 48px rgba(168,85,247,0.8), 0 0 80px rgba(34,211,238,0.4); }
+}
+ 
+.hero h1 {
+  font-size: 2rem;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  background: linear-gradient(135deg, #fff 20%, var(--p) 60%, var(--c));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.3rem;
+}
+ 
+.hero p {
+  font-size: 0.72rem;
+  color: var(--mut);
+  font-family: var(--mono);
+  letter-spacing: 0.08em;
+}
+ 
+/* ─── Tabs ─── */
+.tabs {
+  display: flex;
+  gap: 3px;
+  background: var(--s1);
+  border: 1px solid var(--bd);
+  border-radius: 14px;
+  padding: 4px;
+  margin-bottom: 1.25rem;
+  animation: fadeUp 0.6s 0.1s ease both;
+}
+ 
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+ 
+.tab {
+  flex: 1;
+  padding: 0.5rem 0.3rem;
+  text-align: center;
+  font-size: 0.68rem;
+  font-weight: 700;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.25s;
+  color: var(--mut);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+ 
+.tab.active {
+  background: linear-gradient(135deg, var(--p2), var(--p));
+  color: #fff;
+  box-shadow: 0 0 16px rgba(168,85,247,0.4);
+}
+ 
+/* ─── Panels ─── */
+.panel { display: none; animation: fadeUp 0.35s ease both; }
+.panel.active { display: block; }
+ 
+/* ─── Card ─── */
+.card {
+  background: linear-gradient(145deg, rgba(15,15,34,0.9), rgba(10,10,26,0.95));
+  border: 1px solid var(--bd);
+  border-radius: 18px;
+  padding: 1.1rem;
+  margin-bottom: 1rem;
+  backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
+  animation: fadeUp 0.4s ease both;
+}
+ 
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--p), var(--c), transparent);
+  opacity: 0.6;
+}
+ 
+/* ─── Password Display ─── */
+.pass-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 0.6rem;
+}
+ 
+.pass-out {
+  flex: 1;
+  background: rgba(0,0,0,0.4);
+  border: 1px solid var(--bd2);
+  border-radius: 12px;
+  padding: 0.85rem 1rem;
+  font-family: var(--mono);
+  font-size: 0.88rem;
+  color: var(--txt);
+  word-break: break-all;
+  line-height: 1.6;
+  min-height: 52px;
+  cursor: pointer;
+  transition: border-color 0.25s, box-shadow 0.25s;
+  letter-spacing: 0.04em;
+}
+ 
+.pass-out:hover {
+  border-color: var(--p);
+  box-shadow: 0 0 16px rgba(168,85,247,0.15);
+}
+ 
+.pass-out.masked {
+  color: var(--mut);
+  letter-spacing: 0.12em;
+}
+ 
+.pass-out.copied {
+  border-color: var(--g);
+  box-shadow: 0 0 20px rgba(74,222,128,0.2);
+}
+ 
+/* ─── Icon Buttons ─── */
+.ia {
+  width: 36px;
+  height: 36px;
+  background: var(--s2);
+  border: 1px solid var(--bd);
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  color: var(--mut);
+  flex-shrink: 0;
+}
+ 
+.ia:hover {
+  border-color: var(--p);
+  color: var(--txt);
+  box-shadow: 0 0 10px rgba(168,85,247,0.2);
+}
+ 
+/* ─── Strength Meter ─── */
+.meter-wrap { margin-bottom: 0.9rem; }
+ 
+.meter-track {
+  height: 6px;
+  background: var(--s3);
+  border-radius: 3px;
+  overflow: hidden;
+  margin-bottom: 6px;
+  position: relative;
+}
+ 
+.meter-fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.5s cubic-bezier(.4,0,.2,1), background 0.4s;
+  position: relative;
+}
+ 
+.meter-fill::after {
+  content: '';
+  position: absolute;
+  right: 0; top: 0; bottom: 0;
+  width: 12px;
+  background: rgba(255,255,255,0.3);
+  border-radius: 2px;
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+ 
+@keyframes shimmer {
+  0%, 100% { opacity: 0; }
+  50%       { opacity: 1; }
+}
+ 
+.meter-info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.68rem;
+  font-family: var(--mono);
+  margin-bottom: 6px;
+}
+ 
+.meter-lbl { font-weight: 700; }
+.meter-bits { color: var(--mut); }
+ 
+.checks { display: flex; gap: 5px; flex-wrap: wrap; }
+ 
+.chk {
+  font-size: 0.58rem;
+  font-family: var(--mono);
+  padding: 2px 7px;
+  border-radius: 20px;
+  background: var(--s3);
+  color: var(--mut);
+  border: 1px solid var(--fnt);
+  transition: all 0.3s;
+}
+ 
+.chk.ok {
+  background: rgba(74,222,128,0.08);
+  color: var(--g);
+  border-color: rgba(74,222,128,0.25);
+}
+ 
+/* ─── Labels ─── */
+.lbl {
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--mut);
+  margin-bottom: 0.5rem;
+  margin-top: 0.1rem;
+}
+ 
+/* ─── Slider ─── */
+.slrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 1rem;
+}
+ 
+input[type=range] {
+  flex: 1;
+  -webkit-appearance: none;
+  appearance: none;
+  height: 5px;
+  border-radius: 3px;
+  outline: none;
+  cursor: pointer;
+  background: linear-gradient(to right, var(--p) 0%, var(--p) var(--pct, 25%), var(--bd2) var(--pct, 25%));
+}
+ 
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--p), var(--c));
+  border: 2px solid #fff;
+  cursor: pointer;
+  box-shadow: 0 0 12px rgba(168,85,247,0.6);
+}
+ 
+input[type=range]::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--p), var(--c));
+  border: 2px solid #fff;
+  cursor: pointer;
+}
+ 
+.snum {
+  font-family: var(--mono);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--p);
+  min-width: 28px;
+  text-align: right;
+}
+ 
+/* ─── Chip Toggles ─── */
+.grid2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+  margin-bottom: 1rem;
+}
+ 
+.chip {
+  background: var(--s2);
+  border: 1px solid var(--bd);
+  border-radius: 10px;
+  padding: 0.55rem 0.7rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--mut);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  transition: all 0.2s;
+  user-select: none;
+}
+ 
+.chip:hover { border-color: var(--bd2); }
+ 
+.chip.on {
+  background: rgba(168,85,247,0.1);
+  border-color: var(--p);
+  color: var(--txt);
+  box-shadow: inset 0 0 12px rgba(168,85,247,0.05);
+}
+ 
+.pip {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--bd2);
+  flex-shrink: 0;
+  transition: all 0.2s;
+}
+ 
+.chip.on .pip {
+  background: var(--p);
+  box-shadow: 0 0 6px var(--p);
+}
+ 
+/* ─── Buttons ─── */
+.brow {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 7px;
+}
+ 
+.btn {
+  padding: 0.75rem 0.5rem;
+  border-radius: 12px;
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  border: 1px solid var(--bd);
+}
+ 
+.btn:active { transform: scale(0.95); }
+ 
+.btn-gen {
+  background: linear-gradient(135deg, var(--p2), var(--p));
+  border-color: transparent;
+  color: #fff;
+  box-shadow: 0 4px 20px rgba(168,85,247,0.35);
+}
+ 
+.btn-gen:hover {
+  box-shadow: 0 4px 28px rgba(168,85,247,0.55);
+  transform: translateY(-1px);
+}
+ 
+.btn-cop {
+  background: var(--s2);
+  color: var(--txt);
+}
+ 
+.btn-cop:hover {
+  border-color: var(--c);
+  color: var(--c);
+  box-shadow: 0 0 12px rgba(34,211,238,0.15);
+}
+ 
+.btn-del {
+  background: var(--s2);
+  color: var(--mut);
+}
+ 
+.btn-del:hover {
+  border-color: var(--r);
+  color: var(--r);
+}
+ 
+/* ─── History ─── */
+.hist-box { min-height: 50px; }
+ 
+.hi {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 0;
+  border-bottom: 1px solid var(--bd);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+ 
+.hi:last-child { border-bottom: none; }
+.hi:hover { padding-left: 4px; }
+ 
+.hipw {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  color: var(--mut);
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+ 
+.histr {
+  font-size: 0.58rem;
+  font-family: var(--mono);
+  padding: 2px 7px;
+  border-radius: 20px;
+  flex-shrink: 0;
+}
+ 
+.hitm {
+  font-size: 0.58rem;
+  color: var(--fnt);
+  font-family: var(--mono);
+  flex-shrink: 0;
+}
+ 
+.empty {
+  text-align: center;
+  padding: 0.75rem;
+  font-size: 0.72rem;
+  color: var(--mut);
+  font-family: var(--mono);
+}
+ 
+/* ─── PIN ─── */
+.pin-grid {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  padding: 1rem 0;
+  flex-wrap: wrap;
+}
+ 
+.pdig {
+  width: 46px;
+  height: 58px;
+  background: rgba(0,0,0,0.4);
+  border: 1.5px solid var(--bd);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--mono);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--p);
+  transition: all 0.2s;
+}
+ 
+.pdig.fl {
+  border-color: var(--p);
+  background: rgba(168,85,247,0.08);
+  box-shadow: 0 0 14px rgba(168,85,247,0.3);
+}
+ 
+/* ─── Passphrase ─── */
+.phrase-box {
+  min-height: 54px;
+  line-height: 2;
+  word-break: break-word;
+  padding: 0.5rem 0;
+}
+ 
+.pw {
+  display: inline-block;
+  background: rgba(168,85,247,0.1);
+  border: 1px solid rgba(168,85,247,0.25);
+  border-radius: 7px;
+  padding: 1px 9px;
+  margin: 2px;
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  color: var(--p);
+  transition: all 0.3s;
+}
+ 
+.pw:hover {
+  background: rgba(168,85,247,0.2);
+  transform: translateY(-1px);
+}
+ 
+/* ─── Analyze Stats ─── */
+.stat-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 1rem;
+}
+ 
+.sc {
+  background: rgba(0,0,0,0.4);
+  border: 1px solid var(--bd);
+  border-radius: 12px;
+  padding: 0.85rem;
+  text-align: center;
+}
+ 
+.sv {
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: var(--p);
+  font-family: var(--mono);
+}
+ 
+.sl {
+  font-size: 0.6rem;
+  color: var(--mut);
+  margin-top: 3px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+ 
+.anal-in {
+  width: 100%;
+  background: rgba(0,0,0,0.4);
+  border: 1px solid var(--bd);
+  border-radius: 12px;
+  color: var(--txt);
+  font-family: var(--mono);
+  font-size: 0.82rem;
+  padding: 0.75rem 1rem;
+  outline: none;
+  margin-bottom: 1rem;
+  transition: border-color 0.2s;
+}
+ 
+.anal-in:focus {
+  border-color: var(--p);
+  box-shadow: 0 0 16px rgba(168,85,247,0.1);
+}
+ 
+/* ─── Tip Box ─── */
+.tip {
+  background: rgba(168,85,247,0.06);
+  border: 1px solid rgba(168,85,247,0.18);
+  border-radius: 10px;
+  padding: 0.75rem;
+  font-size: 0.72rem;
+  color: var(--mut);
+  line-height: 1.7;
+  margin-top: 0.5rem;
+}
+ 
+.tip strong { color: var(--p); }
+ 
+/* ─── Small Buttons ─── */
+.bsm {
+  padding: 0.45rem 0.8rem;
+  border-radius: 8px;
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: 1px solid var(--bd);
+  background: var(--s2);
+  color: var(--mut);
+}
+ 
+.bsm:hover {
+  border-color: var(--p);
+  color: var(--p);
+}
+ 
+.bsm.on {
+  background: linear-gradient(135deg, var(--p2), var(--p));
+  border-color: transparent;
+  color: #fff;
+}
+ 
+/* ─── Misc ─── */
+.sep { height: 1px; background: var(--bd); margin: 0.75rem 0; }
+ 
+.glow-sep {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--p), var(--c), transparent);
+  opacity: 0.3;
+  margin: 0.75rem 0;
+}
+ 
+.trel { position: relative; }
+ 
+.toast-abs {
+  position: absolute;
+  top: -46px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--g);
+  color: #052e16;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 5px 16px;
+  border-radius: 999px;
+  opacity: 0;
+  transition: all 0.3s;
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 10;
+}
+ 
+.toast-abs.show {
+  opacity: 1;
+  top: -50px;
+}
+ 
+@keyframes popIn {
+  0%   { transform: scale(0.8); opacity: 0; }
+  60%  { transform: scale(1.05); }
+  100% { transform: scale(1); opacity: 1; }
+}
+ 
+.popin { animation: popIn 0.35s ease both; }

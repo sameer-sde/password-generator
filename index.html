@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PassForge Pro</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Outfit:wght@400;600;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+ 
+  <canvas id="bg"></canvas>
+ 
+  <div class="wrap">
+    <div class="hero">
+      <div class="shield">🔐</div>
+      <h1>PassForge Pro</h1>
+      <p>// next-gen password generation engine</p>
+    </div>
+ 
+    <div class="tabs">
+      <div class="tab active" onclick="sw('gen')">⚡ Generate</div>
+      <div class="tab" onclick="sw('pin')">🔢 PIN</div>
+      <div class="tab" onclick="sw('ph')">📖 Phrase</div>
+      <div class="tab" onclick="sw('an')">🔍 Analyze</div>
+    </div>
+ 
+    <!-- GENERATE -->
+    <div class="panel active" id="p-gen">
+      <div class="card">
+        <div class="trel">
+          <div class="toast-abs" id="toast">Copied!</div>
+          <div class="pass-row">
+            <div class="pass-out masked" id="pout" onclick="copyPwd()">click generate...</div>
+            <button class="ia" onclick="togVis()" id="eyeB">👁</button>
+            <button class="ia" onclick="genPwd()" title="regenerate">🔄</button>
+          </div>
+        </div>
+        <div class="meter-wrap">
+          <div class="meter-track"><div class="meter-fill" id="mf" style="width:0%"></div></div>
+          <div class="meter-info">
+            <span class="meter-lbl" id="ml" style="color:var(--mut)">—</span>
+            <span class="meter-bits" id="mb"></span>
+          </div>
+          <div class="checks" id="mc"></div>
+        </div>
+      </div>
+ 
+      <div class="card">
+        <p class="lbl">length</p>
+        <div class="slrow">
+          <input type="range" id="ls" min="4" max="64" value="16" step="1" oninput="onL(this)">
+          <span class="snum" id="lv">16</span>
+        </div>
+        <p class="lbl">character sets</p>
+        <div class="grid2">
+          <div class="chip on" id="cu" onclick="ct(this,'up')"><span class="pip"></span>Uppercase A–Z</div>
+          <div class="chip on" id="cl" onclick="ct(this,'lo')"><span class="pip"></span>Lowercase a–z</div>
+          <div class="chip on" id="cn" onclick="ct(this,'nu')"><span class="pip"></span>Numbers 0–9</div>
+          <div class="chip"    id="cs" onclick="ct(this,'sy')"><span class="pip"></span>Symbols !@#$</div>
+          <div class="chip"    id="ce" onclick="ct(this,'ex')"><span class="pip"></span>Extended ¥€£π</div>
+          <div class="chip"    id="ca" onclick="ct(this,'na')"><span class="pip"></span>No 0Ol1I</div>
+          <div class="chip"    id="cp" onclick="ct(this,'pr')"><span class="pip"></span>Pronounceable</div>
+          <div class="chip"    id="cb" onclick="ct(this,'bl')"><span class="pip"></span>Start w/ letter</div>
+        </div>
+        <div class="brow">
+          <button class="btn btn-gen" onclick="genPwd()">⚡ Generate</button>
+          <button class="btn btn-cop" onclick="copyPwd()">📋 Copy</button>
+          <button class="btn btn-del" onclick="clrAll()">🗑</button>
+        </div>
+      </div>
+ 
+      <div class="card">
+        <p class="lbl">history <span style="font-size:0.55rem;font-weight:400;color:var(--fnt)">(last 8)</span></p>
+        <div class="hist-box" id="hl"><div class="empty">no passwords yet</div></div>
+      </div>
+    </div>
+ 
+    <!-- PIN -->
+    <div class="panel" id="p-pin">
+      <div class="card">
+        <p class="lbl">length</p>
+        <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:1rem;">
+          <button class="bsm on" onclick="setPL(4,this)">4 digits</button>
+          <button class="bsm" onclick="setPL(6,this)">6 digits</button>
+          <button class="bsm" onclick="setPL(8,this)">8 digits</button>
+          <button class="bsm" onclick="setPL(10,this)">10 digits</button>
+        </div>
+        <p class="lbl">type</p>
+        <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:1rem;">
+          <button class="bsm on" id="pt0" onclick="setPT('num',this)">Numeric</button>
+          <button class="bsm" id="pt1" onclick="setPT('alp',this)">Alpha</button>
+          <button class="bsm" id="pt2" onclick="setPT('mix',this)">Mixed</button>
+        </div>
+        <div class="pin-grid" id="pg"></div>
+        <div class="glow-sep"></div>
+        <div class="brow" style="margin-top:0.5rem;">
+          <button class="btn btn-gen" onclick="genPin()">⚡ Generate PIN</button>
+          <button class="btn btn-cop" onclick="cpPin()">📋 Copy</button>
+          <button class="btn btn-del">🗑</button>
+        </div>
+      </div>
+      <div class="tip"><strong>Security tip:</strong> Avoid PINs like 1234, 0000, or your birth year. Use Mixed type for OTPs and 2FA codes.</div>
+    </div>
+ 
+    <!-- PHRASE -->
+    <div class="panel" id="p-ph">
+      <div class="card">
+        <p class="lbl">word count</p>
+        <div class="slrow" style="margin-bottom:1rem;">
+          <input type="range" id="ws" min="3" max="10" value="5" step="1" oninput="onW(this)">
+          <span class="snum" id="wv">5</span>
+        </div>
+        <p class="lbl">separator</p>
+        <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:1rem;">
+          <button class="bsm on" onclick="setSep('-',this)">dash -</button>
+          <button class="bsm" onclick="setSep('.',this)">dot .</button>
+          <button class="bsm" onclick="setSep('_',this)">underscore _</button>
+          <button class="bsm" onclick="setSep(' ',this)">space</button>
+          <button class="bsm" onclick="setSep('',this)">none</button>
+        </div>
+        <p class="lbl">options</p>
+        <div class="grid2" style="margin-bottom:1rem;">
+          <div class="chip" id="ppc" onclick="ct(this,'ppc')"><span class="pip"></span>Capitalize</div>
+          <div class="chip" id="ppn" onclick="ct(this,'ppn')"><span class="pip"></span>Add number</div>
+          <div class="chip" id="pps" onclick="ct(this,'pps')"><span class="pip"></span>Add symbol</div>
+          <div class="chip" id="ppl" onclick="ct(this,'ppl')"><span class="pip"></span>L33tspeak</div>
+        </div>
+        <div class="phrase-box" id="phd"><span style="color:var(--mut);font-family:var(--mono);font-size:0.8rem">click generate...</span></div>
+        <div class="glow-sep"></div>
+        <div class="brow" style="margin-top:0.5rem;">
+          <button class="btn btn-gen" onclick="genPhrase()">⚡ Generate</button>
+          <button class="btn btn-cop" onclick="cpPhrase()">📋 Copy</button>
+          <button class="btn btn-del" onclick="clrPhrase()">🗑</button>
+        </div>
+      </div>
+    </div>
+ 
+    <!-- ANALYZE -->
+    <div class="panel" id="p-an">
+      <div class="card">
+        <p class="lbl">paste any password</p>
+        <input class="anal-in" type="text" id="ain" placeholder="type or paste a password here..." oninput="analyze(this.value)">
+        <div class="stat-grid">
+          <div class="sc"><div class="sv" id="s0">—</div><div class="sl">length</div></div>
+          <div class="sc"><div class="sv" id="s1">—</div><div class="sl">entropy bits</div></div>
+          <div class="sc"><div class="sv" id="s2">—</div><div class="sl">char pool</div></div>
+          <div class="sc"><div class="sv" id="s3">—</div><div class="sl">crack time</div></div>
+        </div>
+        <div class="checks" id="ac" style="margin-bottom:0.75rem;gap:6px;flex-wrap:wrap;"></div>
+        <div class="meter-track" style="margin-bottom:0.5rem;"><div class="meter-fill" id="af" style="width:0%"></div></div>
+        <div class="tip" id="atip">Enter a password above to get a full security breakdown.</div>
+      </div>
+    </div>
+  </div>
+ 
+  <script src="script.js"></script>
+</body>
+</html>
+ 
