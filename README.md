@@ -114,6 +114,4 @@ No build step or backend is required; it is a pure front‑end project.
 
 ## 📜 License
 
-This project is licensed under the **MIT License**, which allows others to use, modify, and distribute your project (including commercially) as long as they include your copyright and the license.
-
-Create a `LICENSE` file in the repository and choose the **MIT** template from GitHub’s license picker.
+This project is licensed under the MIT License.
