@@ -2,8 +2,8 @@
 
 PassForge Pro is a modern, single–page password, PIN, and passphrase generator with an animated cyber‑style UI and built‑in strength analysis.
 
-🔗 **Live Demo:** https://your-live-link-here  
-*(Replace this with your actual GitHub Pages / Netlify / Vercel URL.)*
+🔗 **Live Demo:** https://sameer-sde.github.io/password-generator/ 
+
 
 ---
 
